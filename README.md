@@ -30,7 +30,7 @@ Voici une explication des différents noeuds du flux :
 - **Requête HTTP** sert à récupérer une image du flux envoyé par la caméra au lancement du noeud ;
 - **Écriture image** va enregistrer l'image précédemment capturée dans un dossier de l'ordinateur ;
 - **Lecture image** va chercher l'image à analyser afin de pouvoir l'utiliser dans le flux ;
-- **Good Face Detection** va faire fontionner le modèle, en utilisant l'image chargée par le noeud précédent ;
+- **Good Face Detection** va faire fonctionner le modèle, en utilisant l'image chargée par le noeud précédent ;
 - **Traîtement données** est une fonction qui calculera le score de concentration en fonction du nombre d'élèves reconnus par le modèle ;
 - Les noeuds Dashboard **Évolution de la concentration** et  **Concentration en temps réel** servent à afficher les données réunies sur une interface. C'est de cette manière que l'utilisateur aura accès aux données qui lui sont pertinentes ;
 - Les noeuds liés à la **Prévisualisation** et au **Debugging** servent à assurer le bon fonctionnement de certains noeuds individuellement ;
