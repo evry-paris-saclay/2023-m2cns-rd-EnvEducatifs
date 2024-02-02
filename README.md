@@ -8,6 +8,7 @@ L'objectif de ce projet est la réalisation d'une solution à base d'objets conn
 
 Notre solution se concentrera sur cet aspect, et aura pour but de mesurer la concentration d'une classe d'élève en temps réel, en connectant pour cela une caméra à un ordinateur sur lequel les données seront centralisées, analysées et affichées. 
 Nous avons utlisé l'outil Node-RED qui permet de développer des solutions d'objets connectés sur navigateur, au moyen d'un flux constitué de noeuds ayant chacun une fonction et connectés entre eux. Le serveur Node-RED est démarré localement sur l'ordinateur, et dans le cas de notre prototype, interagit avec le téléphone pour récupérer les données au moyen d'une application nommée "IP Webcam". 
+
 Celle-ci enverra le flux vidéo capturé vers un lien HTTP que nous pourrons récupérer à intervalles régulièrs sous forme d'image. Ensuite, l'image est analysée pour récupérer le nombre de visage visibles, en se basant sur le modèle de machine learning YOLO qui permet la détection d'objets en temps réel. L'enseignant renseigne au préalable le nombre d'élèves présents, et un score basé sur le nombre de visages détectés est affiché sur l'interface suivante, et mis à jour à intervalles réguliers : 
 
 <img width="233" alt="image" src="https://github.com/evry-paris-saclay/2023-m2cns-rd-EnvEducatifs/assets/47394498/d7d2b863-06ad-443b-9d12-2b704f4ac957">
@@ -24,7 +25,7 @@ Le flux est le suivant :
 <img width="935" alt="image" src="https://github.com/evry-paris-saclay/2023-m2cns-rd-EnvEducatifs/blob/main/docs/flux.png">
 
 Voici une explication des différents noeuds du flux :
-- Le noeud **Lancement** sert à lancer le flux manuellement. Aussi, les noeuds **Reset** et **Réinitialisation** ont été ajoutés pour réinitialiser les valeurs du compteur et du graphique visibles sur le dashboard ;
+- Le noeud **Lancement** sert à lancer le flux manuellement. Aussi, les noeuds **Reset** et **Remplacement Val** ont été ajoutés pour réinitialiser les valeurs du compteur et du graphique visibles sur le dashboard ;
 - **Requête HTTP** sert à récupérer une image du flux envoyé par la caméra au lancement du noeud ;
 - **Écriture image** va enregistrer l'image précédemment capturée dans un dossier de l'ordinateur ;
 - **Lecture image** va chercher l'image à analyser afin de pouvoir l'utiliser dans le flux ;
