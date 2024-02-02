@@ -17,6 +17,7 @@ Une fois .......................... (flux vidéo ou image ? à préciser) récup
 Pour utiliser cette solution, il est nécessaire d'installer les deux noeuds suivants dans Node-RED :
 - `@good-i-deer/node-red-contrib-face-detection` : il s'agit du  noeud qui contient le modèle de machine learning utilisé pour analyser les images ;
 - `node-red-dashboard` : il s'agit du noeud permettant de mettre en place le dashboard.
+
 Il est également possible d'installer le noeud `node-red-contrib-image-output`, qui permet de visualiser les images analysées.
 
 Le flux est le suivant : 
