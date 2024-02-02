@@ -24,7 +24,15 @@ Le flux est le suivant :
 <img width="935" alt="image" src="https://github.com/evry-paris-saclay/2023-m2cns-rd-EnvEducatifs/assets/47394498/bbe38523-0100-4576-9dfb-298b432bf016">
 
 Voici une explication des différents noeuds du flux :
-- **Reset** et **Réinitialisation** servent à réinitialiser les valeurs du compteur et du graphique visibles sur le dashboard ;
-- 
+- Le noeud **Lancement** sert à lancer le flux manuellement. Aussi, les noeuds **Reset** et **Réinitialisation** ont été ajoutés pour réinitialiser les valeurs du compteur et du graphique visibles sur le dashboard ;
+- **Requête HTTP** sert à récupérer une image du flux envoyé par la caméra au lancement du noeud ;
+- **Écriture image** va enregistrer l'image précédemment capturée dans un dossier de l'ordinateur ;
+- **Lecture image** va chercher l'image à analyser afin de pouvoir l'utiliser dans le flux ;
+- **Good Face Detection** va faire fontionner le modèle, en utilisant l'image chargée par le noeud précédent ;
+- **Traîtement données** est une fonction qui calculera le score de concentration en fonction du nombre d'élèves reconnus par le modèle ;
+- Les noeuds Dashboard **Évolution de la concentration** et  **Concentration en temps réel** servent à afficher les données réunies sur une interface. C'est de cette manière que l'utilisateur aura accès aux données qui lui sont pertinentes ;
+- Les noeuds liés à la **Prévisualisation** et au **Debugging** servent à assurer le bon fonctionnement de certains noeuds individuellement ;
+- Les noeuds "Change" (**Récupération** et **Stockage scoreGlo**) nous permettent de manipuler certaines données ;
 
+  
 Node-RED permet d'appliquer la solution à de plus grandes échelles, et il serait envisageable de la déployer dans un établissement scolaire. Concernant la prise en main, notre solution propose un dashboard facilement lisible par tous. Cependant, l'outil employé nécessite des connaissances pour pouvoir l'utiliser.
