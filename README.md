@@ -21,7 +21,7 @@ Pour utiliser cette solution, il est nécessaire d'installer les deux noeuds sui
 Il est également possible d'installer le noeud `node-red-contrib-image-output`, qui permet de visualiser les images capturées.
 
 Le flux est le suivant : 
-<img width="935" alt="image" src="https://github.com/evry-paris-saclay/2023-m2cns-rd-EnvEducatifs/assets/47394498/bbe38523-0100-4576-9dfb-298b432bf016">
+<img width="935" alt="image" src="[https://github.com/evry-paris-saclay/2023-m2cns-rd-EnvEducatifs/assets/47394498/bbe38523-0100-4576-9dfb-298b432bf016](https://github.com/evry-paris-saclay/2023-m2cns-rd-EnvEducatifs/blob/main/docs/flux.png)">
 
 Voici une explication des différents noeuds du flux :
 - Le noeud **Lancement** sert à lancer le flux manuellement. Aussi, les noeuds **Reset** et **Réinitialisation** ont été ajoutés pour réinitialiser les valeurs du compteur et du graphique visibles sur le dashboard ;
