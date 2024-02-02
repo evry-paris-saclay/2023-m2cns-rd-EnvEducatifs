@@ -31,10 +31,10 @@ Voici une explication des différents noeuds du flux :
 - **Écriture image** va enregistrer l'image précédemment capturée dans un dossier de l'ordinateur ;
 - **Lecture image** va chercher l'image à analyser afin de pouvoir l'utiliser dans le flux ;
 - **Good Face Detection** va faire fonctionner le modèle, en utilisant l'image chargée par le noeud précédent ;
+- **Récupération scoreGlo** et **Stockage scoreGlo** nous permettent de stocker la valeur de scoreGlo, afin de pouvoirla faire évoluer dans le temps ;
 - **Traîtement données** est une fonction qui calculera le score de concentration en fonction du nombre d'élèves reconnus par le modèle ;
 - Les noeuds Dashboard **Évolution de la concentration** et  **Concentration en temps réel** servent à afficher les données réunies sur une interface. C'est de cette manière que l'utilisateur aura accès aux données qui lui sont pertinentes ;
 - Les noeuds liés à la **Prévisualisation** et au **Debugging** servent à assurer le bon fonctionnement de certains noeuds individuellement ;
-- Les noeuds "Change" (**Récupération scoreGlo** et **Stockage scoreGlo**) nous permettent de stocker la valeur de scoreGlo, afin de pouvoirla faire évoluer dans le temps ;
 - Les noeuds **Reset** et **Remplacement Val** ont été ajoutés pour réinitialiser les valeurs du compteur et du graphique visibles sur le dashboard, utile en début de cours.
 
 Le noeud **Lancement** étant déclenché à intervalles réguliers, ici toutes les 5 secondes, cela a pour conséquence de déclencher le flux régulièrement et ainsi mettre à jour le score de concentration plusieurs fois par minute.
