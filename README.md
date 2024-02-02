@@ -4,7 +4,7 @@
 
 L'objectif de ce projet est la réalisation d'une solution à base d'objets connectés pour améliorer l'expérience éducative (à l'école, à l'université ou même à la maison). Les objets connectés sont une formidable opportunité pour construire un écosystème éducatif plus efficace et plus juste. En effet, de tels écosystèmes peuvent faire en sorte de fournir un parcours éducatif approprié à chacun et de réduire les inégalités pour ceux qui nécessitent une attention particulière. Par exemple, un facteur important dans la réussite du processus d’apprentissage est la concentration. 
 
-# Conception
+## Conception
 
 Notre solution se concentrera sur cet aspect, et aura pour but de mesurer la concentration d'une classe d'élève en temps réel, en connectant pour cela une caméra à un ordinateur sur lequel les données seront centralisées, analysées et affichées. 
 Nous avons utlisé l'outil Node-RED qui permet de développer des solutions d'objets connectés sur navigateur, au moyen d'un flux constitué de noeuds ayant chacun une fonction et connectés entre eux. Le serveur Node-RED est démarré localement sur l'ordinateur, et, dans le cas de notre prototype, interragit avec le téléphone pour récupérer les données au moyen de..........................
