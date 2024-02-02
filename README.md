@@ -22,7 +22,8 @@ Pour utiliser cette solution, il est nécessaire d'installer les deux noeuds sui
 Il est également possible d'installer le noeud `node-red-contrib-image-output`, qui permet de visualiser les images capturées.
 
 Le flux est le suivant : 
-<img width="935" alt="image" src="https://github.com/evry-paris-saclay/2023-m2cns-rd-EnvEducatifs/blob/main/docs/flux.png">
+<img width="936" alt="image" src="https://github.com/evry-paris-saclay/2023-m2cns-rd-EnvEducatifs/assets/47394498/21990ab6-a33f-4589-9760-512da4ad0ace">
+
 
 Voici une explication des différents noeuds du flux :
 - Le noeud **Lancement** permet de démarrer le flux.
