@@ -4,6 +4,7 @@
 
 L'objectif de ce projet est la réalisation d'une solution à base d'objets connectés pour améliorer l'expérience éducative (à l'école, à l'université ou même à la maison). Les objets connectés sont une formidable opportunité pour construire un écosystème éducatif plus efficace et plus juste. En effet, de tels écosystèmes peuvent faire en sorte de fournir un parcours éducatif approprié à chacun et de réduire les inégalités pour ceux qui nécessitent une attention particulière. Par exemple, un facteur important dans la réussite du processus d’apprentissage est la concentration. 
 
+
 ## Conception
 
 Notre solution se concentrera sur cet aspect, et aura pour but de mesurer la concentration d'une classe d'élève en temps réel, en connectant pour cela une caméra à un ordinateur sur lequel les données seront centralisées, analysées et affichées. 
@@ -12,6 +13,7 @@ Nous avons utlisé l'outil Node-RED qui permet de développer des solutions d'ob
 Celle-ci enverra le flux vidéo capturé vers un lien HTTP que nous pourrons récupérer à intervalles réguliers sous forme d'image. Ensuite, l'image est analysée pour récupérer le nombre de visage visibles, en se basant sur le modèle de machine learning YOLO qui permet la détection d'objets en temps réel. L'enseignant renseigne au préalable le nombre d'élèves présents, et un score basé sur le nombre de visages détectés est affiché sur l'interface suivante, et mis à jour à intervalles réguliers : 
 
 <img width="233" alt="image" src="https://github.com/evry-paris-saclay/2023-m2cns-rd-EnvEducatifs/assets/47394498/d7d2b863-06ad-443b-9d12-2b704f4ac957">
+
 
 ## Installation
 
@@ -47,3 +49,10 @@ Ce score **Global** sera calculé de la manière suivante, à chaque instant :
 - On calcule le pourcentage "*scoreAtt*" de visages **détectés** par rapport au nombre **attendu** précédemment mentionné. (Exemple : Classe de 10 élèves, 8 visages détectés par le modèle -> 80%)
 - On incrémente ou décrémente le score **global** pour que celui-ci se rapproche progressivement de ce pourcentage.
 Ce système garantit une meilleure lisibilité du score sur le long terme.
+
+
+## Amélioration
+
+Ce prototype, bien que fonctionnel, peut être amélioré sur de nombreux axes.
+Par exemple, après l’obtention de capteurs appropriés, il serait possible d’ajouter les données concernant la température, la luminosité et le volume sonore de la classe à l’interface.
+Aussi, il serait possible d’importer un ou plusieurs modèles différents. Cela rendrait la détection de l’état de concentration d’un élève plus précises, en utilisant un modèle plus adapté, ou alors en combiner d’autres à celui que nous utilisons à présent. 
