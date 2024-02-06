@@ -41,7 +41,7 @@ Le noeud **Lancement** étant déclenché à intervalles réguliers, ici toutes 
   
 Node-RED permet d'appliquer la solution à de plus grandes échelles, et il serait envisageable de la déployer dans un établissement scolaire. Concernant la prise en main, notre solution propose un dashboard facilement lisible par tous. Cependant, l'outil employé nécessite des connaissances pour pouvoir l'utiliser.
 
-Par exemple, avant de lancer le flux, il faudra donner manuellement une valeur à la variable *nbEleve* dans la fonction **Traitement données**. Cette valeur correspond au nombre d'élèves présents dans la classe, donc le nombre "attendu" de visages que le modèle devrait détecter. Si le modèle ne réussit pas à détecter un modèle, on considère que l'élève n'est pas concentré, ce qui influencera le score Global.
+Par exemple, avant de lancer le flux, il faudra donner manuellement une valeur à la variable *nbEleve* dans la fonction **Traitement données**. Cette valeur correspond au nombre d'élèves présents dans la classe, donc le nombre "attendu" de visages que le modèle devrait détecter. Si le modèle ne réussit pas à détecter un visage, on considère que l'élève n'est pas concentré, ce qui influencera le score Global.
 
 Ce score **Global** sera calculé de la manière suivante, à chaque instant :
 - On calcule le pourcentage de visages **détectés** par rapport au nombre **attendu** précédemment mentionné. (Exemple : Classe de 10 élèves, 8 visages détectés par le modèle -> 80%)
