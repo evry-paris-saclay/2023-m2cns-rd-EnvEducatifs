@@ -30,8 +30,8 @@ Voici une explication des différents noeuds du flux :
 - **Requête HTTP** sert à récupérer une image du flux envoyé par la caméra au lancement du noeud ;
 - **Écriture image** va enregistrer l'image précédemment capturée dans un dossier de l'ordinateur ;
 - **Lecture image** va chercher l'image à analyser afin de pouvoir l'utiliser dans le flux ;
-- **Good Face Detection** va faire fonctionner le modèle, en utilisant l'image chargée par le noeud précédent ;
-- **Récupération scoreGlo** et **Stockage scoreGlo** nous permettent de stocker la valeur de scoreGlo, afin de pouvoirla faire évoluer dans le temps ;
+- **Good Face Detection** va faire fonctionner le modèle, en utilisant l'image chargée par le noeud précédent. Note : **Ce calcul peut prendre un certain temps, il faudra adapter les délais de notre flux** ;
+- **Récupération *scoreGlo*** et **Stockage *scoreGlo*** nous permettent de stocker la valeur de scoreGlo, afin de pouvoir la faire évoluer dans le temps ;
 - **Traîtement données** est une fonction qui calculera le score de concentration en fonction du nombre d'élèves reconnus par le modèle ;
 - Les noeuds Dashboard **Évolution de la concentration** et  **Concentration en temps réel** servent à afficher les données réunies sur une interface. C'est de cette manière que l'utilisateur aura accès aux données qui lui sont pertinentes ;
 - Les noeuds liés à la **Prévisualisation** et au **Debugging** servent à assurer le bon fonctionnement de certains noeuds individuellement ;
@@ -40,3 +40,10 @@ Voici une explication des différents noeuds du flux :
 Le noeud **Lancement** étant déclenché à intervalles réguliers, ici toutes les 5 secondes, cela a pour conséquence de déclencher le flux régulièrement et ainsi mettre à jour le score de concentration plusieurs fois par minute.
   
 Node-RED permet d'appliquer la solution à de plus grandes échelles, et il serait envisageable de la déployer dans un établissement scolaire. Concernant la prise en main, notre solution propose un dashboard facilement lisible par tous. Cependant, l'outil employé nécessite des connaissances pour pouvoir l'utiliser.
+
+Par exemple, avant de lancer le flux, il faudra donner manuellement une valeur à la variable *nbEleve* dans la fonction **Traitement données**. Cette valeur correspond au nombre d'élèves présents dans la classe, donc le nombre "attendu" de visages que le modèle devrait détecter. Si le modèle ne réussit pas à détecter un modèle, on considère que l'élève n'est pas concentré, ce qui influencera le score Global.
+
+Ce score **Global** sera calculé de la manière suivante, à chaque instant :
+- On calcule le pourcentage de visages **détectés** par rapport au nombre **attendu** précédemment mentionné. (Exemple : Classe de 10 élèves, 8 visages détectés par le modèle -> 80%)
+- On incrémente ou décrémente le score **global** pour que celui-ci se rapproche progressivement de ce pourcentage.
+Ce système garantit une meilleure lisibilité du score sur le long terme.
