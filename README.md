@@ -49,10 +49,3 @@ Ce score **Global** sera calculé de la manière suivante, à chaque instant :
 - On calcule le pourcentage "*scoreAtt*" de visages **détectés** par rapport au nombre **attendu** précédemment mentionné. (Exemple : Classe de 10 élèves, 8 visages détectés par le modèle -> 80%)
 - On incrémente ou décrémente le score **global** pour que celui-ci se rapproche progressivement de ce pourcentage.
 Ce système garantit une meilleure lisibilité du score sur le long terme.
-
-
-## Amélioration
-
-Ce prototype, bien que fonctionnel, peut être amélioré sur de nombreux axes.
-Par exemple, après l’obtention de capteurs appropriés, il serait possible d’ajouter les données concernant la température, la luminosité et le volume sonore de la classe à l’interface.
-Aussi, il serait possible d’importer un ou plusieurs modèles différents. Cela rendrait la détection de l’état de concentration d’un élève plus précises, en utilisant un modèle plus adapté, ou alors en combiner d’autres à celui que nous utilisons à présent. 
