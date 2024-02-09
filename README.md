@@ -49,3 +49,5 @@ Ce score **Global** sera calculé de la manière suivante, à chaque instant :
 - On calcule le pourcentage "*scoreAtt*" de visages **détectés** par rapport au nombre **attendu** précédemment mentionné. (Exemple : Classe de 10 élèves, 8 visages détectés par le modèle -> 80%)
 - On incrémente ou décrémente le score **global** pour que celui-ci se rapproche progressivement de ce pourcentage.
 Ce système garantit une meilleure lisibilité du score sur le long terme.
+
+Pour capturer les photos depuis le téléphone, il est également possible d'utiliser [cette application](https://github.com/CHAMPETIERAntonin/CameraSamplesHttp). Dans ce cas il n'est pas nécessaire d'utiliser les nodes **Écriture image** et **Lecture image** dans Node-RED.
